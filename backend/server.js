@@ -12,6 +12,11 @@ app.use(express.json());
 
 const PORT = process.env.PORT || 5000;
 
+// Root route for health check
+app.get('/', (req, res) => {
+  res.send('Backend Messaging Service is running!');
+});
+
 // Email Transporter Configuration
 const transporter = nodemailer.createTransport({
   service: 'gmail',
